@@ -5,7 +5,7 @@ var libs = {
     },
     'jahcode' : {
         name : 'jahcode 1.0.0',
-        src : ['jahcode.js', 'model.js']
+        src : ['jahcode.min.js', 'model.js']
     },
     'jsclass' : {
         name : 'JS.Class 3.0.9',

@@ -1,6 +1,6 @@
 function defineAnimal() {
-    Animal = Object.inherit({
-        initialize : function(name) {
+    Animal = dojo.declare(null, {
+        constructor : function(name) {
             this.name = name;
         },
         getName : function() {
@@ -13,9 +13,8 @@ function defineAnimal() {
 }
 
 function defineAgedAnimal() {
-    AgedAnimal = Animal.inherit({
-        initialize : function(name, age) {
-            this.superCall(name);
+    AgedAnimal = dojo.declare(Animal, {
+        constructor : function(name, age) {
             this.age = age;
         },
         getAge : function() {
@@ -25,13 +24,13 @@ function defineAgedAnimal() {
 }
 
 function defineCat() {
-    Cat = AgedAnimal.inherit({});
+    Cat = dojo.declare(AgedAnimal, {});
 }
 
 function defineDog() {
-    Dog = AgedAnimal.inherit({
+    Dog = dojo.declare(AgedAnimal, {
         getAge : function() {
-            return this.superCall() * 7;
+            return this.inherited(arguments) * 7;
         }
     });
 }
